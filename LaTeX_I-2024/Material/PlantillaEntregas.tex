@@ -1,0 +1,87 @@
+\documentclass[10pt]{article}
+% Authors:
+%   @Otros
+%   @Fakerd
+%   @Fakeert
+%   @NoSeEnoje17
+
+% Paquete para idioma español
+\usepackage[spanish]{babel}
+\usepackage{graphicx} 
+\usepackage{graphics}
+\usepackage{wrapfig}
+
+% Paquete para márgenes
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+% Paquete para gestionar enlaces
+\usepackage[hidelinks]{hyperref} 
+\hypersetup{ colorlinks=true,                    
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+% Paquete para la bibliografía
+\usepackage{biblatex} 
+\addbibresource{}
+
+% Paquete para gestionar los encabezados y pies de páginas
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyhead[L]{} 
+\fancyhead[R]{} 
+\fancyfoot[R]{\thepage} 
+\fancyfoot[L]{} 
+
+% Paquete para sangrías de títulos
+\usepackage{titlesec}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}{\hspace{1em}\thesubsection }{1em}{}
+
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}{\hspace{2em}\thesubsubsection }{1em}{}
+
+\title{\textbf{Título}}
+\author{Autor}
+\date{Fecha}
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+\begin{document}
+\begin{titlepage}
+	\centering
+    \includegraphics[scale = 0.8]{uva.jpg}\\[0.5 cm]	% Logo Universidad
+
+    \rule{\linewidth}{0.2 mm} \\[0.4 cm]
+	{ \huge \bfseries \thetitle}\\      % Título
+	\rule{\linewidth}{0.2 mm} \\[1.5 cm]
+
+    { \Large \bfseries Escuela/UNIVERSIDAD}\\[0.3 cm]
+    { \Large \bfseries ASIGNATURA}\\[1 cm]
+    
+    \Large \theauthor
+    \vspace{1.5cm} \\
+    \Large \thedate
+
+\end{titlepage}
+\renewcommand{\contentsname}{Tabla de contenidos}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Sección de ejemplo}
+    \subsection{Subsección de ejemplo}
+
+
+% Imprime la bibliografía
+\printbibliography[heading=bibintoc,title={Bibliografía}]
+
+\end{document}
